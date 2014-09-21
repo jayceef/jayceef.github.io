@@ -1,0 +1,12 @@
+Eating From The Kitchen Table
+
+Menu?  No Thanks.
+
+9/19/2014
+
+The Dev Bootcamp experience takes the school/student relationship to another level.  Students come to Dev Bootcamp knowing that they are expected to take ownership of their time there.  If there is a problem that they are experiencing they are expected to initiate any corrective measures that need to take place.  This is not a place for "I need help, please fix this problem."
+If you need help, you need to take the bull by the horns and take control of your problem.  It could mean simply raising your hand, or asking a cohort.  Or it could meaning burning the midnight oil and staying for a couple of extra hours after class to have a better understanding of the problem.
+
+This could cause students a little trepidation at first.  This isn't normally how a school is structured.  But once they get their feet wet they should have confidence in their ability to take the steps necessary to solve problems from their own initiation.
+
+This type of learning is quite exhilarating and makes me a little nervous.  But I'm all in!
