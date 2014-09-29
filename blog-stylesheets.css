@@ -1,11 +1,33 @@
 html {
-  background-color: gray;
+  background-color: white;
 }
 div {
   background-color: white;
 }
 .graphic {
-display: block;
+
+}
+h2 span {
+
+position: fixed;
+  top: 100px
+  left: 10
+  width: 100%;
+  color: white;
+  font: bold 24px/45px Helvetica, Sans-Serif;
+   letter-spacing: -1px;
+
+   background: rgba(0, 0, 0, 0.7);
+   padding: 15px;
+
+}
+
+graphic {
+display:
+clear: both
+width: 800px;
+    height: 200px;
+    position: relative;
 
 
 
@@ -13,19 +35,21 @@ display: block;
 .blog {
 display: inline-block;
 height: 500px;
-  width: 79%;
-  border: 1px solid black;
-  border-radius: 1px;
-margin: 0px;
+  width: 650px;
+
+
+
 }
 .sidebar {
-  display: inline-block;
+float: right;
 height: 500px;
-  width: 18%;
-  border: 1px solid black;
-  border-radius: 1px;
+  width: 140px;
+border-left: 4px solid black;
+border-left-color: green;
 
-margin: 0px;
+padding: 0px;
+margin: -4px;
+margin-top: -50px;
 }
 
 .footer {
@@ -34,6 +58,7 @@ margin: 0px;
 }
 
 #line {
-  border: 1px solid black;
+  border: 1px solid blue;
   margin-top: 25px
+
 }
