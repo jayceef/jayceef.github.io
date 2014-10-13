@@ -7,6 +7,56 @@
 <h2><span>From &lt;a&gt;<br /> to z-index</span></h2></div>
 
 <div class="blog"><br>
+10/12/2014 <br><br>
+Where art thou, Women? <br><br>
+One of the of major problems in the tech industry has been around since the beginning.  Most industries are well represented in terms of demographics.  The tech industry insn't one of them.  Women have ben grossly underrepresented.  Just recently, Google and Yahoo announced that only 30 and 37% of their workforce are women. And only 15% of women have leadership roles in the tech field worldwide.  What to make of this? <br>
+One glaring statistic is that only 25% of computer science degrees to go women.  Why is this?  Bias could involved.  We when start out in education, boys could be pushed torwards certain careers, i.e. the tech industry, and women could be pushed toward more traditional female roles.  We may do this subconsciously, but it could still be there. <br>
+Perhaps the reason for so few women in the tech field is genetic?  Perhaps women simply aren't attracted to the tech industry not because of environment pressure, by internal ones.  Is there something in the tech industry that turn women off on a genetic level?  Perhaps the male brain has more aptitude in this field?  Or maybe it's a combination of environment and genetic factors? <br>
+In either case, we must do our best so that women are more represented in the tech field.  This probably starts in school.  We must see to it that girls have the same access to computer classes as the boys, and stress the importance of the computer industry at large.  For more information check these links out:  <br><br>
+http://www.elsevier.com/connect/study-women-encounter-inequality-in-science-and-technology-fields <br><br>
+http://www.ibtimes.com/women-tech-industry-few-far-between-some-say-male-prejudices-are-blame-1607370 <br><br>
+
+
+10/11/2014 <br><br>
+The group_by <br>
+The Enumerable mixin in Ruby provides many methods to sort, find, group and collect a collection of objects.  One of my favorite is group_by.  <br><br>
+
+Let's say you want to find the mode of an array.  You can create a hash, and finding the mode sorting through the key and value pairs.  But you can also do so by group_by.  Usually with group_by your ouput is a hash but it doesn't have to be!  The great thing about Ruby it's flexibility!  By simply adding onto to group_by with some extra sorting, we can get to our solution in one line! <br><br>
+def mode (array)
+ array.group_by {|num| array.count(num)}<br>
+end<br><br>
+When we push our number array through this method, it doesn't give us want we want.  We need to sort even more.  <br>
+def mode (array)
+ array.group_by {|num| array.count(num)}.max.last.uniq<br>
+end<br><br>
+We sort the array in order, and ask at the end to take the biggest and last number, while .unique gives us only one Integer.  Just what we need!
+
+
+
+10/5/2014<br><br>
+
+Thinking about Stuff and more Stuff<br><br>
+
+There are many tests that are available for us to use to examine ourselves.  We can use the IQ test for intelligence, or the Myers–Briggs Type Indicator for personality.  There are many to choose from.  One I took recently is for determining my favored thinking style, developed by Anthony Gregorc.  He divided thinking styles into four groups: Concrete Sequential Thinkers (based in reality. They process information in an ordered, sequential, linear way.),  Concrete Random Thinkers (experimenters), Abstract Random Thinkers (organize information through reflection, and thrive in unstructured, people-oriented environments.) and Abstract Sequential Thinkers (love the world of theory and abstract thought.) <br><br>
+
+I got 37% for each Concrete Random Thinkers and Abstract Sequential Thinkers, 20% for Abstract Random Thinkers and the remaining 6% for Concrete Sequential Thinkers.  <br><br>
+
+Upon reflection, I think this test accurately describes the way I think.  There is a lot you can pinpoint, even with a 10 minutes test.  For me to thrive at DBC, I need to to grasp the curriculum through though broad concepts and theories and then bring that theory onto paper so to speak, and experiment the hell out the curiculum through writing as much coding exercises I can get my hands on!<br><br>
+
+And for me to use my thinking styles to the fullest, I need to have an open mindset.  I need to see challanges and obstacles not as problems to avoid, but as necessities to have in order to expand the way I learn and see the world.  Without having an open mindset, no combination of thinking styles can overcome the mountain you must climb.<br><br>
+
+
+
+10/3/2014<br><br>
+Hashes and Arrays<br><br>
+Programmers need all sorts of tools when creating code for different types problems.  I'm going to focus on some methods we would need to sift, calculate and rearrange a collection of objects to make better use of those objects.
+
+The first method we could use is an Array. Arrays are one-size-fits-all data structures.  Most methods that run through collecting objects will return these objects as arrays.  Arrays are ordered, integer-indexed collection of objects. For instance, we can create an array called "animal".  It could look something like this:  animal = ["dog", "cat", "elephant"].  The important thing to remember about arrays is that they are ordered and integer-indexed.  Meaning "dog" always sits in the first position, which for programmers means it sits in index[0] and "cat" sits in index[1].  Arrays are best used for when you want to quickly look up each element or even sift through the array within a boundary or range.  Because each element is next to each other in memory, this means that getting animal[100000] would take the same amount of time as getting animal[5].  Nice time saver! <br><br>
+
+Hashes are an unordered, object-indexed collection of key-value pairs.  A hash can look something like this:  pets = {dog: joe, cat: alice, elephant: rufus}.  It's important to remember that these are unordered pairs, so even though "joe: dog" is in the first position, doesn't mean that the pair will always be there.  The computer may very well store them in memory as {elephant: rufus, cat: alice, dog: joe}.  So it takes longer to lookup hashes than arrays.  When you use arrays, you have to remember what the order is to get to an object.  If you can't remember that dog is in index[0] then you're screwed.  With arrays, you don't have the remember the order of the objects. To find what your dog is called, just call the dog's "value" like this pets["dog"] and the output would be "Joe".  Pretty cool.  <br><br>
+
+
+
 9/28/2014<br><br>
 CSS to the rescue!!!<br><br>
 

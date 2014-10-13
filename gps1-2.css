@@ -1,0 +1,23 @@
+ html {
+        font-family: Courier;
+        background-color: #D9D9D9;
+      }
+      #authors {
+        font-size: 30px;
+        font-style: italic;
+      }
+      #title {
+        font-size: 25px;
+        font-weight: bold;
+      }
+      .content {
+        font-size: 22px;
+      }
+      #Driver {
+        float: left;
+        display: inline;
+      }
+      #Navigator {
+        float: right;
+        display: inline;
+      }
