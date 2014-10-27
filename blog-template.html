@@ -7,6 +7,56 @@
 <h2><span>From &lt;a&gt;<br /> to z-index</span></h2></div>
 
 <div class="blog"><br>
+10/26/2014<br><br>
+Stereotyping - How bad does it suck? <br><br>
+A stereotype is a widely held but fixed and oversimplified image or idea of a particular type of person or thing. Stereotypes are all over.  It doesn't matter what race, religion, sex or age you are.  It is pan-cultural.  It's in our DNA.  Stereotypes can be good or bad. They allow people to quickly process new information about an event or person and they help people to make predictions about other people’s behavior. Most stereotypes are bad though.  Let's look at one in particular - Stereotype threat.<br><br>
+Stereotype threat refers to being at risk of confirming, as self-characteristic, a negative stereotype about one's group.(Steele & Aronson, 1995).  This sounds bad because it is bad!  There are many examples that you can find on the internet, and that's a good thing.  We have to discuss this more.  The more open discussion we have the more we can reduce stereotype threat in our society.  Most stereotype threats come from race and sex prejudice.  And not just in our workplace, but in all facets of society.  Stereotypes are learned mostly from our parents and peers, but also through mass media, making this beast a hard one to conquer.  But discussion is not enough. We have to act.  Not through new laws, which never work, but through education and understanding.
+
+10/24/2014 <br><br>
+Blocs, Procs, and Lambdas<br><br>
+We learn early on in Ruby that everything is a object.  EVERYTHING!  Well, that's not exactly true.Blocks (meaning blocks of code) aren't objects.  They can't saved for later use and don't havethe abilities that objects have.  So when you want to use a block of code over and over again you must write that code each time you need it.  Well, Ruby has what is called a Proc.  You can think of it as "saved" block of code. Let's look at an example.  <br><br>
+array = [1.3, 2.4, 4.9]<br><br>
+over_2 = Proc.new { |x| x >= 2}<br><br>
+array.select(&over_2)<br><br>
+So we have our array of numbers.  We also have our block of code { |x| x >= 2} which is looking for all integers equal or greater than 2.  We set that block of code as a new Proc and we called it over_1.  So now over_1, our Proc, is our "saved" block of code that we can call on whenever we want to.  We then run our Proc through our array.  We do that with (&name_of_Proc), which in this case looks like (&over_2).  Per our block of code, the ouput would be [2.4, 4.9].  We can now call our Proc (again, block of code) on any object we like!
+<br><br>
+There's also another way to use blocks of codes as objects: Lambdas.  Procs and lambdas are very similar.  I'll explain the difference below.  First let's use Lambdas in action.<br><br>
+good_guys = ["cheech", "chong", "seth rogan", "dr. dre"]<br><br>
+upper = lambda { |x| x.upcase }<br><br>
+good_guys.collect(&upper)<br><br>
+The concept is the same, but the sytax is just different.  We have our super cool array and we want to make all the characters in those strings capitalized.   But instead of (&name_of_Proc) we put "lambda { |parameter| block_of_super_cool_code }" like we did in the above example. <br><br>
+So what's the difference between a proc and a lambda?  Two things: First, a lambda checks the number of arguments it's passed and a proc will not. So if you give a lambda wrong number of arguments the program will spit out a error message.  But if you do the same to a proc the program will simply assign nil to any missing arguments. Second, when a lambda returns its object, it passes control to the calling method.   When a proc returns its object, it does so immediately, without passing back control to the calling method. It's safe to say that when would want to use lambdas if we have want to return anything after our Proc.new!
+
+10/20/2014<br><br>
+Pairing<br><br>
+Pairing sessions can be a little nerve-racking.  You are spending an hour or two with a complete stranger about a topic you know very little about.  The first 5 minutes you get some small talk out of the way:  where are you from, where are you going, how are you keeping up with the curriculum? This is the most fun part of pairing.  Getting to know people, if it's just a little bit.  You gradually get into the task at hand: The assigned challenge you are taking on.  You both try your best but sooner or later you hit a roadblock or a really big rabbit hole.  You then spend a good 30 minutes on one problem.  It could be just a small syntax error for all you know. And this is the great thing about pairing.  Without it, problems can get big in no time and your googling all of sudden become fruitless.  But with your pair, you can usually get a grasp of problems better - two heads are better than one!  By communicating back and forth, you and your pair gain a better grasp of the task at hand.<br><br>
+When you're done with pairing, it's time for feedback!  Feedback is integral to pairing as it shares your thoughts to your pair about the two hours you spent together.  Feedback is a little unnerving.  Receiving and giving.  You don't want to upset your pair with too much critism - Usually there isn't any.  So much so that the vast majority of the time you'll find it difficult to give any specific or actionable feedback.  There are worse problems!
+10/18/2014 <br><br>
+Keeping up with the Classes<br><br>
+One of the great things about learning to use Ruby is that you can have fun creating something out of nothing.  Just of few line of code is all you need to smile. Let me give you an example of what a class is for.<br><br>
+class Person<br><br>
+
+    def initialize(name, eyes, hair)<br><br>
+        @name = name <br><br>
+        @eyes = eyes<br><br>
+        @hair = hair<br><br>
+    end<br><br>
+
+    def really_cool_string<br><br>
+        puts "#{@name} has #{@eyes} eyes and #{@hair} hair."<br><br>
+    end<br><br>
+
+end<br><br>
+
+guy1= Person.new("James", "blue", "brown")<br><br>
+print guy1.really_cool_string<br><br>
+
+So what is all doing?  In any class we create we need to create variables so that we can use them.  We do this with the initialize method. All variables in the initialize method will be used in all other methods, if we so choose, by giving them what is called scope. For instance, in the above example we have our variables "name", "eyes", and "hair".  Each one has a @ in front of it.  If a variable has an @ in front of it we call those variables instance variables.  They can only be used in the specific instance of that class.  The instance variable can be used by other methods in the class when any new instance is created by the object.  When I created the new object above, "guy1", it used the instance variables I assigned in the initialization method.
+<br><br>
+We can give variables other scope as well.  If we put @@ in front of the variable we give the whole class access to that variable, regardless of how or when objects are created.  Or we can even give global variables ($) where we can call on them in any class we choose.  We don't like doing that though, as we can get into trouble when all of our classes and methods have access to it.  Therefore, giving variables global access can make it hard to troubleshoot!  <br><br>
+
+
+
 10/12/2014 <br><br>
 Where art thou, Women? <br><br>
 One of the of major problems in the tech industry has been around since the beginning.  Most industries are well represented in terms of demographics.  The tech industry insn't one of them.  Women have ben grossly underrepresented.  Just recently, Google and Yahoo announced that only 30 and 37% of their workforce are women. And only 15% of women have leadership roles in the tech field worldwide.  What to make of this? <br>
