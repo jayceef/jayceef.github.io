@@ -1,0 +1,66 @@
+body {
+  margin: 10;
+}
+
+.wrap {
+  width: 800px;
+  height: 1000px;
+  margin: auto;
+  background: white;
+
+
+}
+.graphic {
+
+  background: red;
+  position: absolute;
+
+}
+
+.writtenlogo {
+width: 125px;
+  height: 135px;
+margin: auto;
+  background: black;
+  position: absolute;
+  left: 30px; top: 30px;
+color: white;
+  font: bold 24px/45px Helvetica, Sans-Serif;
+   letter-spacing: -1px;
+
+   background: rgba(0, 0, 0, 0.6);
+   padding: 15px;
+
+}
+
+.right {
+
+width: 150px;
+  height: 90px;
+margin: auto;
+color: white;
+;
+  position: absolute;
+  left: 640px; top: 40px;
+font-style: italic;
+font-size: 50px;
+font-family: fantasy;
+
+}
+
+.topgraphic {
+width: 100px;
+  height: 400px;
+margin: auto;
+  background: white;
+  position: absolute;
+  left: 800px; top: 200px;
+
+
+}
+
+#line {
+  border: 1px solid blue;
+  margin-top: 25px
+
+}
