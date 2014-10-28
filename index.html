@@ -1,5 +1,154 @@
+
 <html>
-  <body>
-      Hello DBC!
-  </body>
+<head>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<body>
+<div class="graphic"><img src="header.jpg" />
+<div class="wrap">
+10/26/2014<br><br>
+Stereotyping - How bad does it suck? <br><br>
+A stereotype is a widely held but fixed and oversimplified image or idea of a particular type of person or thing. Stereotypes are all over.  It doesn't matter what race, religion, sex or age you are.  It is pan-cultural.  It's in our DNA.  Stereotypes can be good or bad. They allow people to quickly process new information about an event or person and they help people to make predictions about other people’s behavior. Most stereotypes are bad though.  Let's look at one in particular - Stereotype threat.<br><br>
+Stereotype threat refers to being at risk of confirming, as self-characteristic, a negative stereotype about one's group.(Steele & Aronson, 1995).  This sounds bad because it is bad!  There are many examples that you can find on the internet, and that's a good thing.  We have to discuss this more.  The more open discussion we have the more we can reduce stereotype threat in our society.  Most stereotype threats come from race and sex prejudice.  And not just in our workplace, but in all facets of society.  Stereotypes are learned mostly from our parents and peers, but also through mass media, making this beast a hard one to conquer.  But discussion is not enough. We have to act.  Not through new laws, which never work, but through education and understanding.
+
+10/24/2014 <br><br>
+Blocs, Procs, and Lambdas<br><br>
+We learn early on in Ruby that everything is a object.  EVERYTHING!  Well, that's not exactly true.Blocks (meaning blocks of code) aren't objects.  They can't saved for later use and don't havethe abilities that objects have.  So when you want to use a block of code over and over again you must write that code each time you need it.  Well, Ruby has what is called a Proc.  You can think of it as "saved" block of code. Let's look at an example.  <br><br>
+array = [1.3, 2.4, 4.9]<br><br>
+over_2 = Proc.new { |x| x >= 2}<br><br>
+array.select(&over_2)<br><br>
+So we have our array of numbers.  We also have our block of code { |x| x >= 2} which is looking for all integers equal or greater than 2.  We set that block of code as a new Proc and we called it over_1.  So now over_1, our Proc, is our "saved" block of code that we can call on whenever we want to.  We then run our Proc through our array.  We do that with (&name_of_Proc), which in this case looks like (&over_2).  Per our block of code, the ouput would be [2.4, 4.9].  We can now call our Proc (again, block of code) on any object we like!
+<br><br>
+There's also another way to use blocks of codes as objects: Lambdas.  Procs and lambdas are very similar.  I'll explain the difference below.  First let's use Lambdas in action.<br><br>
+good_guys = ["cheech", "chong", "seth rogan", "dr. dre"]<br><br>
+upper = lambda { |x| x.upcase }<br><br>
+good_guys.collect(&upper)<br><br>
+The concept is the same, but the sytax is just different.  We have our super cool array and we want to make all the characters in those strings capitalized.   But instead of (&name_of_Proc) we put "lambda { |parameter| block_of_super_cool_code }" like we did in the above example. <br><br>
+So what's the difference between a proc and a lambda?  Two things: First, a lambda checks the number of arguments it's passed and a proc will not. So if you give a lambda wrong number of arguments the program will spit out a error message.  But if you do the same to a proc the program will simply assign nil to any missing arguments. Second, when a lambda returns its object, it passes control to the calling method.   When a proc returns its object, it does so immediately, without passing back control to the calling method. It's safe to say that when would want to use lambdas if we have want to return anything after our Proc.new!
+
+10/20/2014<br><br>
+Pairing<br><br>
+Pairing sessions can be a little nerve-racking.  You are spending an hour or two with a complete stranger about a topic you know very little about.  The first 5 minutes you get some small talk out of the way:  where are you from, where are you going, how are you keeping up with the curriculum? This is the most fun part of pairing.  Getting to know people, if it's just a little bit.  You gradually get into the task at hand: The assigned challenge you are taking on.  You both try your best but sooner or later you hit a roadblock or a really big rabbit hole.  You then spend a good 30 minutes on one problem.  It could be just a small syntax error for all you know. And this is the great thing about pairing.  Without it, problems can get big in no time and your googling all of sudden become fruitless.  But with your pair, you can usually get a grasp of problems better - two heads are better than one!  By communicating back and forth, you and your pair gain a better grasp of the task at hand.<br><br>
+When you're done with pairing, it's time for feedback!  Feedback is integral to pairing as it shares your thoughts to your pair about the two hours you spent together.  Feedback is a little unnerving.  Receiving and giving.  You don't want to upset your pair with too much critism - Usually there isn't any.  So much so that the vast majority of the time you'll find it difficult to give any specific or actionable feedback.  There are worse problems!
+10/18/2014 <br><br>
+Keeping up with the Classes<br><br>
+One of the great things about learning to use Ruby is that you can have fun creating something out of nothing.  Just of few line of code is all you need to smile. Let me give you an example of what a class is for.<br><br>
+class Person<br><br>
+
+    def initialize(name, eyes, hair)<br><br>
+        @name = name <br><br>
+        @eyes = eyes<br><br>
+        @hair = hair<br><br>
+    end<br><br>
+
+    def really_cool_string<br><br>
+        puts "#{@name} has #{@eyes} eyes and #{@hair} hair."<br><br>
+    end<br><br>
+
+end<br><br>
+
+guy1= Person.new("James", "blue", "brown")<br><br>
+print guy1.really_cool_string<br><br>
+
+So what is all doing?  In any class we create we need to create variables so that we can use them.  We do this with the initialize method. All variables in the initialize method will be used in all other methods, if we so choose, by giving them what is called scope. For instance, in the above example we have our variables "name", "eyes", and "hair".  Each one has a @ in front of it.  If a variable has an @ in front of it we call those variables instance variables.  They can only be used in the specific instance of that class.  The instance variable can be used by other methods in the class when any new instance is created by the object.  When I created the new object above, "guy1", it used the instance variables I assigned in the initialization method.
+<br><br>
+We can give variables other scope as well.  If we put @@ in front of the variable we give the whole class access to that variable, regardless of how or when objects are created.  Or we can even give global variables ($) where we can call on them in any class we choose.  We don't like doing that though, as we can get into trouble when all of our classes and methods have access to it.  Therefore, giving variables global access can make it hard to troubleshoot!  <br><br>
+
+
+
+10/12/2014 <br><br>
+Where art thou, Women? <br><br>
+One of the of major problems in the tech industry has been around since the beginning.  Most industries are well represented in terms of demographics.  The tech industry insn't one of them.  Women have ben grossly underrepresented.  Just recently, Google and Yahoo announced that only 30 and 37% of their workforce are women. And only 15% of women have leadership roles in the tech field worldwide.  What to make of this? <br>
+One glaring statistic is that only 25% of computer science degrees to go women.  Why is this?  Bias could involved.  We when start out in education, boys could be pushed torwards certain careers, i.e. the tech industry, and women could be pushed toward more traditional female roles.  We may do this subconsciously, but it could still be there. <br>
+Perhaps the reason for so few women in the tech field is genetic?  Perhaps women simply aren't attracted to the tech industry not because of environment pressure, by internal ones.  Is there something in the tech industry that turn women off on a genetic level?  Perhaps the male brain has more aptitude in this field?  Or maybe it's a combination of environment and genetic factors? <br>
+In either case, we must do our best so that women are more represented in the tech field.  This probably starts in school.  We must see to it that girls have the same access to computer classes as the boys, and stress the importance of the computer industry at large.  For more information check these links out:  <br><br>
+http://www.elsevier.com/connect/study-women-encounter-inequality-in-science-and-technology-fields <br><br>
+http://www.ibtimes.com/women-tech-industry-few-far-between-some-say-male-prejudices-are-blame-1607370 <br><br>
+
+
+10/11/2014 <br><br>
+The group_by <br>
+The Enumerable mixin in Ruby provides many methods to sort, find, group and collect a collection of objects.  One of my favorite is group_by.  <br><br>
+
+Let's say you want to find the mode of an array.  You can create a hash, and finding the mode sorting through the key and value pairs.  But you can also do so by group_by.  Usually with group_by your ouput is a hash but it doesn't have to be!  The great thing about Ruby it's flexibility!  By simply adding onto to group_by with some extra sorting, we can get to our solution in one line! <br><br>
+def mode (array)
+ array.group_by {|num| array.count(num)}<br>
+end<br><br>
+When we push our number array through this method, it doesn't give us want we want.  We need to sort even more.  <br>
+def mode (array)
+ array.group_by {|num| array.count(num)}.max.last.uniq<br>
+end<br><br>
+We sort the array in order, and ask at the end to take the biggest and last number, while .unique gives us only one Integer.  Just what we need!
+
+
+
+10/5/2014<br><br>
+
+Thinking about Stuff and more Stuff<br><br>
+
+There are many tests that are available for us to use to examine ourselves.  We can use the IQ test for intelligence, or the Myers–Briggs Type Indicator for personality.  There are many to choose from.  One I took recently is for determining my favored thinking style, developed by Anthony Gregorc.  He divided thinking styles into four groups: Concrete Sequential Thinkers (based in reality. They process information in an ordered, sequential, linear way.),  Concrete Random Thinkers (experimenters), Abstract Random Thinkers (organize information through reflection, and thrive in unstructured, people-oriented environments.) and Abstract Sequential Thinkers (love the world of theory and abstract thought.) <br><br>
+
+I got 37% for each Concrete Random Thinkers and Abstract Sequential Thinkers, 20% for Abstract Random Thinkers and the remaining 6% for Concrete Sequential Thinkers.  <br><br>
+
+Upon reflection, I think this test accurately describes the way I think.  There is a lot you can pinpoint, even with a 10 minutes test.  For me to thrive at DBC, I need to to grasp the curriculum through though broad concepts and theories and then bring that theory onto paper so to speak, and experiment the hell out the curiculum through writing as much coding exercises I can get my hands on!<br><br>
+
+And for me to use my thinking styles to the fullest, I need to have an open mindset.  I need to see challanges and obstacles not as problems to avoid, but as necessities to have in order to expand the way I learn and see the world.  Without having an open mindset, no combination of thinking styles can overcome the mountain you must climb.<br><br>
+
+
+
+10/3/2014<br><br>
+Hashes and Arrays<br><br>
+Programmers need all sorts of tools when creating code for different types problems.  I'm going to focus on some methods we would need to sift, calculate and rearrange a collection of objects to make better use of those objects.
+
+The first method we could use is an Array. Arrays are one-size-fits-all data structures.  Most methods that run through collecting objects will return these objects as arrays.  Arrays are ordered, integer-indexed collection of objects. For instance, we can create an array called "animal".  It could look something like this:  animal = ["dog", "cat", "elephant"].  The important thing to remember about arrays is that they are ordered and integer-indexed.  Meaning "dog" always sits in the first position, which for programmers means it sits in index[0] and "cat" sits in index[1].  Arrays are best used for when you want to quickly look up each element or even sift through the array within a boundary or range.  Because each element is next to each other in memory, this means that getting animal[100000] would take the same amount of time as getting animal[5].  Nice time saver! <br><br>
+
+Hashes are an unordered, object-indexed collection of key-value pairs.  A hash can look something like this:  pets = {dog: joe, cat: alice, elephant: rufus}.  It's important to remember that these are unordered pairs, so even though "joe: dog" is in the first position, doesn't mean that the pair will always be there.  The computer may very well store them in memory as {elephant: rufus, cat: alice, dog: joe}.  So it takes longer to lookup hashes than arrays.  When you use arrays, you have to remember what the order is to get to an object.  If you can't remember that dog is in index[0] then you're screwed.  With arrays, you don't have the remember the order of the objects. To find what your dog is called, just call the dog's "value" like this pets["dog"] and the output would be "Joe".  Pretty cool.  <br><br>
+
+
+
+9/28/2014<br><br>
+CSS to the rescue!!!<br><br>
+
+One of the best ways to create good looking text, and websites in general, is through the use of CSS. <br> For instance, using CSS, we can tinker with the way text or images look next to each other.  CSS can change the margin between objects.  That is, we change the space around each element we see on the web page.  The larger the margin, the bigger the space is betwen objects and elements that we see on screen.<br>
+CSS can also change the border of each object we see.  By changing the edge of each element, we can create different effects that we like!  And of course, we can set the object to have no border.  Which is also helpful sometimes! <br>
+Lastly, we can have CSS change the space between the content (that is, the text or image or any element for that matter) and the border.  This is called padding and is also useful to create our websites just the way we want them.<br><br>
+
+ 9/19/2014<br><br>
+
+As programmers, we create code.   Just as important, we need to change the code that we created.  We need to keep track of these changes.  Why?  Imagine you've got super-duper awesome code.  Then you edit that code.  And after the edit your program now sucks.
+
+That's where version control comes in.  We Use Git to keep track of changes to our code so we don't have to.  Everytime we make changes to our code Git will record those changes.  Perfect, right?
+
+Well, how are others suppose to make changes to your code?  You need Github for that.  Whereas Git is local program that is stored on your computer, Github is stored on servers so other hackers like yourself can have access to your code.  With your permission of course.  You upload your files on GitHub so others can edit them and vice versa.  Awesome. <br><br>
+
+9/17/2014<br><br>
+
+Menu?  No Thanks.<br><br>
+
+The Dev Bootcamp experience takes the school/student relationship to another level.  Students come to Dev Bootcamp knowing that they are expected to take ownership of their time there.  If there is a problem that they are experiencing they are expected to initiate any corrective measures that need to take place.  This is not a place for "I need help, please fix this problem."
+If you need help, you need to take the bull by the horns and take control of your problem.  It could mean simply raising your hand, or asking a cohort.  Or it could meaning burning the midnight oil and staying for a couple of extra hours after class to have a better understanding of the problem.
+
+This could cause students a little trepidation at first.  This isn't normally how a school is structured.  But once they get their feet wet they should have confidence in their ability to take the steps necessary to solve problems from their own initiation.
+
+This type of learning is quite exhilarating and makes me a little nervous.  But I'm all in!</div>
+<div class="writtenlogo"><h3><span>From &lt;a&gt;<br /> to z-index</span></h3></div>
+<div class="right">James Fallon</div>
+<div class="topgraphic"><p align="center"><a href="mailto:jayceef@yahoo.com"><img src="e-mail.png"/></a>
+<a href="https://twitter.com/jamesfallon14"><img src="twitter.png"/></a>
+<a href="https://www.facebook.com/james.fallon.716"><img src="facebook.png"/></a>
+<a href="https://github.com/jayceef"><img src="github.png"/></a></p>
+<div id="line"></div>
+<p align= "center"> <a href="about-me.html">About Me</a></p>
+<div id="line"></div>
+<p align="center"><em>Cool Links</em></p>
+<p align="center">
+<a href="https://github.com/">Pretty Cool</a><br><br>
+<a href="http://devbootcamp.com/">Awesome</a><br><br>
+<a href="http://losangeles.angels.mlb.com/index.jsp?c_id=ana">Angels</a><br><br>
+<a href="http://en.wikipedia.org/wiki/Ruby_(programming_language)">Let's do this!</a><br><br>
+<a href="http://southpark.cc.com/">Awesomer</a></p></div>
+
+
+
+</body>
 </html>
