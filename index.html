@@ -6,6 +6,32 @@
 <body>
 <div class="graphic"><img src="header.jpg" />
 <div class="wrap"><br><br>
+
+  <b>10/31/2014</b><br><br>
+<p align = center><font size=5><i>Values - The Key Divider</i></font> </p><br><br>
+Competition.  It's not my most prized value, but it's up there.  You don't have to win to feel the benefits of competition.  All you have to do is attempt it.  If you give it your all, competing will benefit you.  It's in our DNA.  It's in the DNA of every creature that walked the earth.  To compete well, you have to have many other values out there: Accomplishment, Creativity, Health, Inspiration, Leadership, Competence, Courage, Growth, Quality, Stability, Self-reliance, wisdom, will-power.  The list goes on and on.  <br><br>
+Of course, when you win you feel fantastic and you get the endorphin rush and feel like you're on top of the world.  But not everybody can win.  Just competing will give most everybody what they need.  Not everybody is good enough to be in the NFL.  But if you just go out there and compete in any level - college or high school or Pop Warner - you will benefit in ways you don't even realize.  That's why we continually invent games on the spur of the moment and compete almost everyday.  Even when we don't realize it.  We need to compete.  It's just not a value, but a necessity.<br><br>
+Of course, every value has it's advantages and disadvantages.  You don't want to compete too much.  Just like you don't want too much courage or too much freedom.  Moderation is everything.  When you compete too much you may look for things that aren't there.  That's where stereotype threat comes into play.  Stereotype threat, like we mentioned, refers to being at risk of confirming, as self-characteristic, a negative stereotype about one's group. Ultra-competitive people many times make rash judgements about a person or a group of people.  They do this out of ignorance, as they are usually glossing over a behavior and over-generalizing.  And stereotype threats don't only come from competition, but mostly just plain old ignorance or long held instilled beliefs.  We have to remember bad habits come from all sorts of values, and most of the time we don't even know it.  We just have to be diligent with ourselves.   <br><br>
+  <b>10/29/2014</b><br><br>
+<p align = center><font size=5><i>Ruby and Javascript, a match made in Heaven!</i></font> </p><br><br>
+Ruby is a main player in backend web development. Javascript is the de facto frontend language of the web.  Let's take a closer look at these two languages and how they are alike and how the differ.  Not broadly, but let's get specific.  Let's talk about Ruby's hashes and Javascript's objects! Below is a sample hash from Ruby.<br><br>
+<code>
+burger = {"Fatburger"=>"Baby Fat with egg",<br><br>
+"McDonalds"=>"Big Mac",<br><br>
+"In-n-out"=>"Double-double"}<br><br>
+burger #=> {"Fatburger"=>"Baby Fat with egg","McDonalds"=>"Big Mac","In-n-out"=>"Double-double"}
+</code><br><br>
+And here's the same content but we'll use a Javascript object and syntax instead. <br><br>
+<code>
+var burger = {<br><br>
+    Fatburger: "Baby Fat with egg",<br><br>
+    McDonalds: "Big Mac",<br><br>
+    Innout: "Double-double"<br><br>
+  }<br><br>
+  console.log(burger) //=> { Fatburger: 'Baby Fat with egg', McDonalds: 'Big Mac', Innout: 'Double-double' }
+  <br><br>
+  We can see they do they same thing.  Both the hash and object store the information in the same way and the output is also the same.  Most of the difference is sytnax and style. Ruby is bare-bones and very minimalist when it comes to space.  Javascript's style is a little more greedy space-wise.  But in the newer versions of Ruby we can get rid of the "=>" and use ":" instead.  So they are even more alike than ever. They output a little differently, but that's not a big deal.  In the end the Ruby hash and Javascript object can be said to be siblings.  In terms of use and form! That definitely makes it easier on us budding jr. developers!
+<br><br>
 <b>10/26/2014</b><br><br>
 <p align = center><font size=5><i>Stereotyping - How bad does it suck?</i></font> </p><br><br>
 A stereotype is a widely held but fixed and oversimplified image or idea of a particular type of person or thing. Stereotypes are all over.  It doesn't matter what race, religion, sex or age you are.  It is pan-cultural.  It's in our DNA.  Stereotypes can be good or bad. They allow people to quickly process new information about an event or person and they help people to make predictions about other people&rsquo;s behavior. Most stereotypes are bad though.  Let's look at one in particular - Stereotype threat.<br><br>
@@ -14,7 +40,7 @@ Stereotype threat refers to being at risk of confirming, as self-characteristic,
 <b>10/24/2014</b> <br><br>
 <p align = center><font size=5><i>Blocs, Procs, and Lambdas</i></font> </p><br><br>
 We learn early on in Ruby that everything is a object.  EVERYTHING!  Well, that's not exactly true.Blocks (meaning blocks of code) aren't objects.  They can't saved for later use and don't havethe abilities that objects have.  So when you want to use a block of code over and over again you must write that code each time you need it.  Well, Ruby has what is called a Proc.  You can think of it as "saved" block of code. Let's look at an example.  <br><br>
-<code>array = [1.3, 2.4, 4.9]</red><br><br>
+<code>array = [1.3, 2.4, 4.9]<br><br>
 over_2 = Proc.new { |x| x >= 2}<br><br>
 array.select(&over_2)</code><br><br>
 So we have our array of numbers.  We also have our block of code { |x| x >= 2} which is looking for all integers equal or greater than 2.  We set that block of code as a new Proc and we called it over_1.  So now over_1, our Proc, is our "saved" block of code that we can call on whenever we want to.  We then run our Proc through our array.  We do that with (&name_of_Proc), which in this case looks like (&over_2).  Per our block of code, the ouput would be [2.4, 4.9].  We can now call our Proc (again, block of code) on any object we like!
