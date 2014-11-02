@@ -5,11 +5,11 @@ body {
 .wrap {
   width: 800px;
   height: 1000px;
-  margin: auto;
   background: white;
   font-family:sans-serif;
 letter-spacing: 1px;
 line-height: 200%;
+padding-top: -80px;
 
 }
 .graphic {
