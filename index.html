@@ -6,6 +6,32 @@
 <body>
 <div class="graphic"><img src="header.jpg" />
 <div class="wrap"><br><br>
+<a name="W8C"></a>
+ <b>11/8/2014</b><br><br>
+ <p align = center><font size=5><i>Navigating Through Conflict</i></font> </p><br><br><a name="W8T"></a>
+The last emotional conflict was with myself.  I already committed to do two things this week and I needed to make some choices. One had to do with my career and the other had to do with personal growth. Both were time-greedy as they both required many, many hours of dedication.  Do I one, the other, or both?  I did both but it the drawbacks were glaring.  I did not spend enough time on either of them and it showed in the in the end product. <br><br> Both activities had long term effects in a hugely beneficial way.  I handled the conflict by doing both but I don't know if it was the right choice.  I will probably never know.  But I think I made the right call even though both suffered in the lack of quality time I invested.  I did just enough of both to make it possible to say I got a lot out of doing them.  If I just did one of the activities I would have made huge strides in that area but it would have had devistating consequences in the other area.  There's only so much time and so many things to do.  My choice was of compromise.  And I hate to compromise.  It rarely passes my stink test.  But you gotta do what you gotta do!
+ <br><br>
+ <b>11/4/2014</b><br><br>
+ <p align = center><font size=5><i>Recursion</i></font> </p><br><br>
+What's recursion and why do we need it in programming?  Recursion is the process of repeating items in a self-similar way.  An example of this is when you point two mirrors at each other:  Each image that one mirror reflects is nested in the others' reflection as well.  In programming recursion is a method of defining functions in such a way that the function is defined in it's own definition.  Let's take a look at an non-recursive example.
+<br><br>
+<code>def add_in_array(array,x)<br><br>
+x.downto(0) {|y| array << y}<br><br>
+array<br><br>
+end<br><br>
+add_in_array ([], 5) </code><br><br>
+The output of calling add_in_array ([], 5) would therefore be <code>[5, 4, 3, 2, 1, 0]</code>.  Here is the code for the above example with a recursive fuction: <br><br>
+<code>
+def add_in_array(array,x)<br><br>
+return array if x < 0<br><br>
+array << x<br><br>
+add_in_array(array, x-1)<br><br>
+end<br><br>
+add_in_array ([], 5)
+  </code><br><br>
+So what makes this function recursive?  In the first example we are looping: iterating over array and adding 5 (down to 0) into the array.  But we are not looping in the recursive example.  We first start with what's called the <b>base case</b>.  A base case is the end goal of the recursive function.  The base case here is <code>return array if x < 0</code>.  That is, the recursion will stop for any numbers we throw at it that are less than zero. Until the base case is met, the function will keep adding numbers into the array, which is what the third line of code is doing: <code>array << x</code>.  The fourth line of code is where the magic happens: <code>add_in_array(array, x-1)</code> If x = 4, 4 for will pass the base case (line 2) because 4 is greater than zero, be added into the array (line 3), and then added to add_in_array(array, 4-1) or add_in_array(array, 3). 3 is also greater than zero, so 3 will go through the same process as 4.  And this process will keep going until you reach the base case. It's called divide and conquer for a reason.  You start with the base case and break down each argument you pass through the function until you end with the base case. <br><br>
+So which type do we use: iteration or recursion? In imperative programming (Java, C, Ruby), iteration is preferred, as it avoids the hassle of function calls and call stack management. In stateless functional languages (Lisp, Haskell, and Scala) recursion is preferred, as there is little of the hassle of function calls.
+<br><br>
 <a name="W7C"></a>
   <b>10/31/2014</b><br><br>
 <p align = center><font size=5><i>Values - The Key Divider</i></font> </p><br><br>
@@ -171,6 +197,9 @@ This type of learning is quite exhilarating and makes me a little nervous.  But 
 <div id="line"></div>
 <p align="center"><em>Blog Posts</em></p>
 <p align="center">
+<a href="#W8C">Week 8 Cultural</a><br><br>
+<a href="#W8T">Week 8 Technical</a><br><br>
+<a href="cs.html">GIT Cheat Sheat</a><br><br>
 <a href="#W7C">Week 7 Cultural</a><br><br>
 <a href="#W7T">Week 7 Technical</a><br><br>
 <a href="#W6C">Week 6 Cultural</a><br><br>

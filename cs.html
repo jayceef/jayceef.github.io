@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="cs.css">
+  <title>GIT Cheat Sheet</title>
+</head>
+  <body>
+    <h2>GIT Cheat Sheet</h2>
+    <div class="save">
+      <p>
+        <h4>Save Changes</h4>
+        git add -A <br>
+        git commit -m "Message"<br>
+        git push origin master<br>
+      </p>
+    </div>
+    <div class="fetching">
+      <p>
+        <h4>Fetching changes</h4>
+        git fetch upstream<br>
+        git merge upstream/master<br>
+        git push origin master<br>
+        <h5>or</h5>
+        git pull upstream master<br>
+        git push origin master
+      </p>
+    </div>
+    <div class="new">
+      <p>
+        <h4>New repositories</h4>
+        git init [name]<br>
+        git clone [url]<br>
+      </p>
+    </div>
+    <div class="undo">
+      <p>
+        <h4>Undo changes</h4>
+        git reset [commit] -- all files<br>
+        git checkout [file] -- single file<br>
+      </p>
+    </div>
+  </body>
+</html>
