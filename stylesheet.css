@@ -1,8 +1,60 @@
 body {
   margin: 10;
 }
+.text {
+  font-family: sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+.pic1 {
 
+
+margin: 0 auto;
+  width: 612px;
+    height: 831px;
+   padding:1px;
+   border:1px solid #021a40;
+  background-color:#ff0;
+
+}
+.pic2 {
+  margin: 0 auto;
+  width: 585px;
+    height: 904px;
+   padding:1px;
+   border:1px solid #021a40;
+  background-color:#ff0;
+
+}
+.pic3 {
+  margin: 0 auto;
+ width: 621px;
+    height: 818px;
+   padding:1px;
+   border:1px solid #021a40;
+  background-color:#ff0;
+
+}
+.pic4 {
+  margin: 0 auto;
+ width: 548px;
+    height: 797px;
+   padding:1px;
+   border:1px solid #021a40;
+  background-color:#ff0;
+
+}
+.pic5 {
+  margin: 0 auto;
+ width: 626px;
+    height: 925px;
+   padding:1px;
+   border:1px solid #021a40;
+  background-color:#ff0;
+
+}
 .wrap {
+
   width: 800px;
   height: 1000px;
   background: white;
